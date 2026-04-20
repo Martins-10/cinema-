@@ -41,42 +41,39 @@
       position: absolute;
     }
 
-    #extra {
-      margin-top: 20px;
-      display: none;
-    }
-
     a {
       color: #1db954;
       text-decoration: none;
       display: block;
       margin-top: 10px;
+      font-size: 18px;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h2>Convite para a mais mais </h2>
+    <h2>Convite para a mais mais</h2>
     <p>Vamos tentar alinhar nossas agendas e ir ver o novo filme do Michael Jackson no cinema? 🍿</p>
 
     <button id="yesBtn">Sim</button>
     <button id="noBtn">Não</button>
-
-    <div id="extra">
-      <p>Parabéns pela escolha sem pressão, tudo na base da conversa</p>
-      <a href="https://youtu.be/oFmP8GE9LVs?si=vEKNRZomnv7lJ1e6" target="_blank">Abrir vídeo no YouTube (confia)</a>
-      <a href="https://open.spotify.com/intl-pt/track/4oY2T9ur7Ll5b2kpBlcWcb?si=84d979d310c24b1a" target="_blank">Ouvir música do MJ que me lembra ocê</a>
-    </div>
   </div>
 
   <script>
     const yesBtn = document.getElementById('yesBtn');
     const noBtn = document.getElementById('noBtn');
-    const extra = document.getElementById('extra');
 
     yesBtn.addEventListener('click', () => {
-      window.open('https://youtu.be/oFmP8GE9LVs?si=vEKNRZomnv7lJ1e6', '_blank');
-      extra.style.display = 'block';
+      // substitui todo o conteúdo
+      document.querySelector('.container').innerHTML = `
+        <p>Parabéns pela escolha sem pressão, tudo se resolve na base da conversa</p>
+        <a href="https://youtu.be/oFmP8GE9LVs?si=vEKNRZomnv7lJ1e6" target="_blank">
+         Abrir vídeo no YouTube (confia)
+        </a>
+        <a href="https://open.spotify.com/intl-pt/track/4oY2T9ur7Ll5b2kpBlcWcb?si=84d979d310c24b1a" target="_blank">
+         Ouvir música do MJ que me lembra ocê
+        </a>
+      `;
     });
 
     noBtn.addEventListener('mouseover', () => {
